@@ -293,7 +293,7 @@ const poly=(a,b,c)=>`${a===1?'':a}x<sup>2</sup> + ${b}x + ${c}`;
 const fac=(p,q)=>`(${p===1?'':p}x + ${q})`;
 const kindOf=(ci,ri)=>{const cx=ci<st.a,rx=ri<st.a;return cx&&rx?'sq':(!cx&&rx?'xv':(cx&&!rx?'xh':'one'))};
 const typeOf=k=>k==='sq'?'sq':k==='one'?'one':'x';
-const label=k=>k==='sq'?'x<sup>2</sup>':k==='one'?'1':'x';
+const label=k=>`<span>${k==='sq'?'x<sup>2</sup>':k==='one'?'1':'x'}</span>`;
 function remaining(t){let n=0;st.placed.forEach(k=>{if(typeOf(k)===t)n++});return st.tot[t]-n}
 function say(msg,cls=''){const s=$('status');s.innerHTML=msg;s.className='status '+cls}
 
